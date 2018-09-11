@@ -80,7 +80,7 @@ def handle(msg):
 						tmp = '我踢不走[這個廣告帳號](tg://user?id={user_id})\n' \
 							'因為你沒給我濫權 (´･_･`)'.format(user_id=user_id)
 						bot.sendMessage(
-							chat_id, tmp, parse_mode='html', reply_markup=message_id)
+							chat_id, tmp, parse_mode='markdown', reply_markup=message_id)
 						bot.leaveChat(chat_id)
 						tmp = '離開惹\n' \
 							'group id: `{gId}`\n' \
