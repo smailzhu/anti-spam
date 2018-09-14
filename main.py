@@ -95,8 +95,10 @@ def handle(msg):
 
 	elif content_type == 'text':
 		say = msg['text'].lower()
+		if user_id != int(owner):
+			return
 		# 作者濫權部分。
-		if say[:5] == '@bang' and user_id == int(owner):
+		if say[:5] == '@bang':
 			sayList = say.split(' ')
 			varList = ['cmd', 'tuser', 'tchatId']
 			for x, y in zip(sayList, varList):
@@ -112,7 +114,7 @@ def handle(msg):
 				bot.kickChatMember(
 					chat_id, tuser)
 
-		if 'reply_to_message' in msg.keys() and user_id == int(owner):
+		if 'reply_to_message' in msg.keys():
 			reply_msgId = msg['reply_to_message']['message_id']
 			reply_user_id = msg['reply_to_message']['from']['id']
 
