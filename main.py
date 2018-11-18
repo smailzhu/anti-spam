@@ -408,7 +408,7 @@ def handle(msg):
 				if txt:
 					bot.sendMessage(chat_id, f'<a href="tg://user?id={target}">boom 目標</a>\n'+txt, reply_markup=inline, parse_mode='HTML')
 				else:
-					bot.sendMessage(chat_id, '什麼都沒有。')
+					bot.sendMessage(chat_id, f'<a href="tg://user?id={target}">boom 目標</a>\n什麼都沒有。')
 
 		elif 'reply_to_message' in msg.keys() and str(user_id) in owner:
 			reply_msgId = msg['reply_to_message']['message_id']
